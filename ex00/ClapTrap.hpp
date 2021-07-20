@@ -3,7 +3,6 @@
 
 #include <string>
 #include <iostream>
-
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"      /* Black */
 #define RED     "\033[31m"      /* Red */
@@ -17,7 +16,7 @@
 
 class ClapTrap
 {
-protected:
+private:
 	std::string Name;
 	int EnergyPoints;
 	int HitPoints;
@@ -32,10 +31,6 @@ public:
 	void attack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	//getter
-	std::string getName() const;
 };
-
-std::ostream & operator<<(std::ostream &out, ClapTrap const& ct);
 
 #endif

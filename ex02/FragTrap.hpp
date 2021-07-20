@@ -1,20 +1,21 @@
-#ifndef FRAG_TRAP_HPP
-#define FRAG_TRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class FragTrap : virtual public ClapTrap
-{   
+class FragTrap : public ClapTrap
+{
+private:
 public:
-    FragTrap();
-    FragTrap(std::string name);
-    FragTrap& operator =(FragTrap const& to_copy);
-    FragTrap(FragTrap const& to_copy);
-    void vaulthunter_dot_exe(std::string const & target);
-    void meleeAttack(std::string const & target);
-    ~FragTrap();
+	FragTrap();
+	FragTrap(std::string name);
+	FragTrap(FragTrap const& to_copy);
+	~FragTrap();
+	FragTrap& operator=(FragTrap const& to_copy);
+	void attack(std::string const &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+	void highFivesGuys(void);
 };
-
-std::ostream & operator<<(std::ostream &out, FragTrap const &ct);
 
 #endif

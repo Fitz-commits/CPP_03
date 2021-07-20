@@ -1,18 +1,21 @@
-#ifndef SCAV_TRAP_HPP
-#define SCAV_TRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include "FragTrap.hpp"
-#include <iostream>
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
+private:
 public:
-	ScavTrap(std::string name);
 	ScavTrap();
+	ScavTrap(std::string name);
 	ScavTrap(ScavTrap const& to_copy);
 	~ScavTrap();
 	ScavTrap& operator=(ScavTrap const& to_copy);
-    void challengeNewcomer();
+	void guardGate();
+	void attack(std::string const &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 };
-std::ostream & operator<<(std::ostream &out, ScavTrap const &ct);
+
 #endif
