@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap()
+DiamondTrap::DiamondTrap()
 {
 	this->HitPoints = FragTrap::HitPoints;
 	this->EnergyPoints = ScavTrap::EnergyPoints;
